@@ -195,7 +195,7 @@
         }
         .modal-overlay.open { display: flex; opacity: 1; }
         .modal-card {
-            background: white; width: 85%; max-width: 400px; border-radius: 16px;
+            background: white; width: 85%; max-width: 400px; max-height: 80vh; overflow-y: auto; border-radius: 16px;
             padding: 24px; position: relative; transform: translateY(20px); transition: transform 0.3s;
             border-top: 5px solid var(--primary);
         }
@@ -218,7 +218,7 @@
     <div id="app-background" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=2070');"></div>
 
     <div class="header">
-        <h1 id="header-title">Day 1: 大阪抵達</h1>
+        <h1 id="header-title">Day 1: 抵達 & 心齋橋、道頓堀</h1>
         <p id="header-date">1月10日 (五)</p>
     </div>
 
@@ -288,7 +288,7 @@
             <div class="card food">
                 <span class="time">15:30</span>
                 <span class="title">☕ Mel Coffee Roasters</span>
-                <span class="desc">必喝冠軍咖啡 (需注意18:00打烊)。</span>
+                <span class="desc">必喝冠軍咖啡 (手沖/拿鐵)。</span>
                 <div class="btn-group">
                     <button onclick="showSpot('mel-coffee')" class="btn-info">ℹ️ 景點介紹</button>
                     <button onclick="openMap('https://www.google.com/maps/search/?api=1&query=Mel+Coffee+Roasters+Osaka')" class="btn-map">📍 本店</button>
@@ -309,7 +309,7 @@
             <div class="card food">
                 <span class="time">19:30</span>
                 <span class="title">🍽️ 晚餐：Okonomiyaki Yukari</span>
-                <span class="desc">千日前店 (Sennichimae)。</span>
+                <span class="desc">千日前店。大阪燒/鐵板燒名店。</span>
                 <button onclick="openMap('https://www.google.com/maps/search/?api=1&query=Okonomiyaki+Yukari+Sennichimae')" class="btn-map">📍 導航</button>
             </div>
 
@@ -327,12 +327,6 @@
                 <span class="time">21:30</span>
                 <span class="title">🛏️ 返回住宿休息</span>
                 <button onclick="openMap('https://www.google.com/maps/search/?api=1&query=1-chōme-21-2+Shimanouchi+Osaka')" class="btn-map">📍 導航</button>
-            </div>
-
-            <div class="card">
-                <span class="time">Late Night</span>
-                <span class="title">🍸 住宿附近推薦酒吧</span>
-                <button onclick="openMap('https://www.google.com/maps/search/?api=1&query=Bar+Nayuta+Osaka')" class="btn-map">📍 導航 (Nayuta)</button>
             </div>
         </div>
 
@@ -391,14 +385,18 @@
             <div class="card">
                 <span class="time">15:30 - 18:30</span>
                 <span class="title">🛍️ 梅田周邊探索</span>
-                <span class="desc">Grand Front Osaka、Nintendo Osaka、中崎町。</span>
+                <span class="desc">
+                    1. <b>Grand Front Osaka</b>：巨型複合設施，集合潮流服飾、雜貨與美食。<br>
+                    2. <b>Nintendo Osaka / 寶可夢中心</b>：位於大丸梅田店 13F，關西首家任天堂直營店。<br>
+                    3. <b>中崎町</b>：昭和懷舊氛圍巷弄，老屋咖啡廳與古著店林立。
+                </span>
                 <button onclick="openMap('https://www.google.com/maps/search/?api=1&query=Grand+Front+Osaka')" class="btn-map">📍 導航 (Grand Front)</button>
             </div>
 
             <div class="card food">
                 <span class="time">19:30</span>
                 <span class="title">🍻 晚餐：川北商店</span>
-                <span class="desc">KITTE大阪店。</span>
+                <span class="desc">KITTE大阪店。日式居酒屋料理/烤雞串/關東煮。</span>
                 <button onclick="openMap('https://www.google.com/maps/search/?api=1&query=Kawakita+Shoten+KITTE+Osaka')" class="btn-map">📍 導航</button>
             </div>
 
@@ -452,7 +450,7 @@
             <div class="card food">
                 <span class="time">12:00</span>
                 <span class="title">🐖 午餐：宮川 豚衛門</span>
-                <span class="desc"><span style="color:#c0392b;">★已預約 12:00</span></span>
+                <span class="desc"><span style="color:#c0392b;">★已預約 12:00</span> 日式炸豬排。</span>
                 <button onclick="openMap('https://www.google.com/maps/search/?api=1&query=Miyagawa+Tonemon+Kyoto')" class="btn-map">📍 導航</button>
             </div>
 
@@ -477,7 +475,7 @@
             <div class="card food">
                 <span class="time">17:30</span>
                 <span class="title">🍽️ 晚餐：富之上 祇園本店</span>
-                <span class="desc"><span style="color:#c0392b;">★ 17:30 用餐</span> 和牛壽喜燒。</span>
+                <span class="desc"><span style="color:#c0392b;">★ 已預約 17:30</span> 和牛壽喜燒/涮涮鍋。</span>
                 <button onclick="openMap('https://maps.app.goo.gl/3h349afqnxhidwU16?g_st=ic')" class="btn-map">📍 導航</button>
             </div>
 
@@ -555,10 +553,10 @@
             </div>
 
             <div class="card food">
-                <span class="time">19:00</span>
-                <span class="title">🥩 晚餐：炭燒肉 石田屋 本店</span>
-                <span class="desc">頂級神戶牛 (務必預約)。</span>
-                <button onclick="openMap('https://www.google.com/maps/search/?api=1&query=Sumi+Yakiniku+Ishidaya+Main+Shop')" class="btn-map">📍 導航</button>
+                <span class="time">18:00</span>
+                <span class="title">🥩 晚餐：神戸牛焼肉 石田屋。 Hanareの上</span>
+                <span class="desc"><span style="color:#c0392b;">★ 已預約 18:00</span> 頂級神戶牛燒肉。</span>
+                <button onclick="openMap('https://www.google.com/maps/search/?api=1&query=Kobe+Beef+Yakiniku+Ishidaya+Hanare+no+Ue')" class="btn-map">📍 導航</button>
             </div>
 
             <div class="card">
@@ -636,12 +634,18 @@
                     <button onclick="openMap('https://www.google.com/search?q=神戸空港駅+構内図&tbm=isch')" class="btn-view-map">查看立體圖</button>
                 </div>
                 <div class="map-card">
-                    <span class="map-tag tag-jr">JR 西日本</span><span class="map-name">三ノ宮站</span>
+                    <span class="map-tag tag-jr">JR / Port Liner</span><span class="map-name">三ノ宮站</span>
                     <button onclick="openMap('https://www.google.com/search?q=JR三ノ宮駅+構内図+立體&tbm=isch')" class="btn-view-map">查看立體圖</button>
                 </div>
                 <div class="map-card">
-                    <span class="map-tag tag-jr">JR 西日本</span><span class="map-name">大阪站 (梅田)</span>
-                    <button onclick="openMap('https://www.google.com/search?q=JR大阪駅+構内図+立體&tbm=isch')" class="btn-view-map">查看立體圖</button>
+                    <span class="map-tag tag-port">Port Liner</span><span class="map-name">計算科學中心站</span>
+                    <button onclick="openMap('https://www.google.com/search?q=計算科学センター駅+構内図&tbm=isch')" class="btn-view-map">查看立體圖</button>
+                </div>
+                
+                <!-- Osaka Area -->
+                <div class="map-card">
+                    <span class="map-tag tag-jr">JR / Metro</span><span class="map-name">大阪站 / 梅田</span>
+                    <button onclick="openMap('https://www.google.com/search?q=JR大阪駅+梅田駅+構内図&tbm=isch')" class="btn-view-map">查看立體圖</button>
                 </div>
                 <div class="map-card">
                     <span class="map-tag tag-metro">Osaka Metro</span><span class="map-name">心齋橋站</span>
@@ -652,9 +656,19 @@
                     <button onclick="openMap('https://www.google.com/search?q=大阪メトロ+長堀橋駅+構内図&tbm=isch')" class="btn-view-map">查看立體圖</button>
                 </div>
                 <div class="map-card">
-                    <span class="map-tag tag-kintetsu">近鐵/阪神</span><span class="map-name">大阪難波站</span>
+                    <span class="map-tag tag-metro">Osaka Metro</span><span class="map-name">大阪商務園區</span>
+                    <button onclick="openMap('https://www.google.com/search?q=大阪ビジネスパーク駅+構内図&tbm=isch')" class="btn-view-map">查看立體圖</button>
+                </div>
+                <div class="map-card">
+                    <span class="map-tag tag-kintetsu">近鐵 / 阪神</span><span class="map-name">大阪難波站</span>
                     <button onclick="openMap('https://www.google.com/search?q=大阪難波駅+構内図&tbm=isch')" class="btn-view-map">查看立體圖</button>
                 </div>
+                <div class="map-card">
+                    <span class="map-tag tag-metro">Metro / 近鐵</span><span class="map-name">日本橋站</span>
+                    <button onclick="openMap('https://www.google.com/search?q=日本橋駅+大阪+構内図&tbm=isch')" class="btn-view-map">查看立體圖</button>
+                </div>
+                
+                <!-- Kyoto Area -->
                 <div class="map-card">
                     <span class="map-tag tag-jr">JR / 近鐵</span><span class="map-name">京都站</span>
                     <button onclick="openMap('https://www.google.com/search?q=京都駅+構内図+立體&tbm=isch')" class="btn-view-map">查看立體圖</button>
@@ -662,6 +676,10 @@
                 <div class="map-card">
                     <span class="map-tag tag-jr">JR 西日本</span><span class="map-name">稻荷站</span>
                     <button onclick="openMap('https://www.google.com/search?q=JR稲荷駅+構内図&tbm=isch')" class="btn-view-map">查看立體圖</button>
+                </div>
+                <div class="map-card">
+                    <span class="map-tag tag-kintetsu">阪急電鐵</span><span class="map-name">京都河原町站</span>
+                    <button onclick="openMap('https://www.google.com/search?q=阪急+京都河原町駅+構内図&tbm=isch')" class="btn-view-map">查看立體圖</button>
                 </div>
             </div>
         </div>
@@ -711,20 +729,76 @@
         };
 
         const spotData = {
-            'mel-coffee': { title: 'Mel Coffee Roasters', tag: '世界級咖啡', desc: '入選世界最佳50間咖啡館。以淺焙手沖聞名。' },
-            'shinsaibashi': { title: '心齋橋筋商店街', tag: '購物天堂', desc: '大阪最著名商店街，藥妝服飾應有盡有。' },
-            'cruise': { title: 'Wonder Cruise', tag: '夜景巡遊', desc: '道頓堀川觀光船，與跑跑人看板合照最佳視角。' },
-            'gozabune': { title: '大阪城御座船', tag: '歷史體驗', desc: '行駛於護城河的豪華遊船，仰望石垣與天守閣。' },
-            'osakacastle': { title: '大阪城天守閣', tag: '大阪地標', desc: '豐臣秀吉的權力象徵，登頂可俯瞰大阪市景。' },
-            'skybuilding': { title: '梅田藍天大廈', tag: '絕美高空', desc: '360度露天空中庭園，無死角欣賞大阪景色。' },
-            'aoniyoshi': { title: '觀光特急 AONIYOSHI', tag: '奢華移動', desc: '以奈良古都為意象的紫色豪華列車。' },
-            'kiyomizu': { title: '清水寺', tag: '世界遺產', desc: '京都最著名古剎，懸空清水舞台是必看絕景。' },
-            'gion': { title: '祇園白川', tag: '京都風情', desc: '柳樹、小橋、町家，最美的京都散步道。' },
-            'pontocho': { title: '先斗町', tag: '美食窄巷', desc: '鴨川旁的石板窄巷，充滿京都風味的餐廳街。' },
-            'inari': { title: '伏見稻荷大社', tag: '千本鳥居', desc: '綿延不絕的朱紅色鳥居，極具視覺震撼。' },
-            'kitano': { title: '北野異人館街', tag: '異國建築', desc: '明治時代洋風建築群，風見雞之館為代表。' },
-            'porttower': { title: '神戶港塔', tag: '港灣地標', desc: '鮮紅鼓形建築，夜晚燈光與美利堅公園相映成趣。' },
-            'animal': { title: '神戶動物王國', tag: '零距離', desc: '水豚、袋鼠就在腳邊，超高互動性的動植物園。' }
+            'mel-coffee': { 
+                title: 'Mel Coffee Roasters', 
+                tag: '世界級咖啡', 
+                desc: '隱身於大阪新町街角的 Mel Coffee Roasters，是一間雖小卻名揚國際的精品咖啡店。曾榮獲國際旅遊網站 Big 7 Travel 評選為「世界最佳 50 間咖啡館」的第三名，實力不容小覷。店主 Masahiko Fumimoto 擁有豐富的澳洲墨爾本咖啡經驗，店內主打自家烘焙的淺焙豆，以乾淨明亮、帶有豐富花果香氣的口感聞名。紅磚牆與溫暖的木質吧台營造出舒適的職人氛圍，雖然座位不多，但每一杯手沖或拿鐵都蘊含著對咖啡的極致追求。這裡不僅是咖啡迷必訪的朝聖地，更是旅途中稍作停歇、享受高品質咖啡香氣的絕佳角落。推薦您點一杯當季的單品手沖，細細品味那份源自大阪的職人溫度與熱情。' 
+            },
+            'shinsaibashi': { 
+                title: '心齋橋筋商店街', 
+                tag: '購物天堂', 
+                desc: '心齋橋筋商店街是大阪最著名的購物聖地，擁有超過 380 年的悠久歷史，是感受大阪商業活力的最佳去處。這條長達 600 公尺的拱廊商店街，連接著南邊的難波與北邊的心齋橋，設有防雨頂棚，無論晴雨都能輕鬆逛街。這裡聚集了各大藥妝店（如松本清、大國藥妝）、國際時尚品牌（如 UNIQLO、H&M）、百年百貨公司（大丸心齋橋店）以及無數的特色服飾與雜貨小店。走在人潮洶湧的街道上，您可以感受到大阪最蓬勃的熱情。除了購物，這裡也是美食的一級戰區，從老字號的日式甜點、章魚燒到最新的街頭小吃應有盡有。這裡是尋找最新日本潮流、購買伴手禮以及體驗「食倒在大阪」氛圍的必訪之地。' 
+            },
+            'cruise': { 
+                title: 'Wonder Cruise', 
+                tag: '夜景巡遊', 
+                desc: 'Wonder Cruise 是體驗大阪道頓堀夜生活的絕佳方式，讓您避開橋上擁擠的人潮，從容享受水都風情。搭乘這艘觀光船，您將沿著道頓堀川緩緩航行，以獨特的水上仰角視角，欣賞兩岸五光十色的巨大霓虹招牌與繁華街景。航程約 20 分鐘，沿途會穿過多座著名的橋樑，包括日本橋與戎橋。最令人期待的亮點，莫過於船隻會暫停在著名的「固力果跑跑人」看板前，讓遊客有充裕的時間，在絕佳的位置與這個大阪地標合影留念。夜晚的河面倒映著璀璨的燈光，搭配船上播放的音樂與導覽，營造出既浪漫又熱鬧的氛圍，是結束一天行程最完美的放鬆方式。' 
+            },
+            'gozabune': { 
+                title: '大阪城御座船', 
+                tag: '歷史體驗', 
+                desc: '大阪城御座船是一項重現豐臣秀吉時代豪華遊船的獨特觀光體驗。這艘貼滿金箔的華麗船隻，是參考了歷史文獻中豐臣秀吉著名的「鳳凰丸」所打造，行駛於大阪城的內護城河上。在約 20 分鐘的航程中，您可以從獨特的水面視角，近距離仰望號稱「日本最高」的壯觀石垣，感受這座固若金湯城池的雄偉。導覽員會沿途解說大阪城的歷史典故，並指出石垣上刻印的大名家紋（刻印石），這些是陸地上難以發現的歷史細節。從護城河上看天守閣，更能感受到建築的層次美與倒影之美。這是一趟結合歷史、建築與自然美景的優雅水上之旅，也是拍攝大阪城獨特角度的絕佳機會。' 
+            },
+            'osakacastle': { 
+                title: '大阪城天守閣', 
+                tag: '大阪地標', 
+                desc: '大阪城天守閣是日本三大名城之一，也是豐臣秀吉統一天下的權力象徵，見證了日本戰國時代的終結與歷史變遷。現存的天守閣雖然是昭和時代重建的鋼筋混凝土建築，但其外觀忠實復原了豐臣時代的黑漆描金風格，綠瓦白牆搭配金飾，極具氣勢。內部則是一座現代化的歷史博物館，展示了豐富的戰國時代文物，包括武將的盔甲、刀劍以及描繪「大坂夏之陣」的屏風畫，透過全像投影等技術生動地呈現歷史故事。登上 8 樓的展望台，可以 360 度俯瞰整個大阪市景與廣闊的大阪城公園，視野極佳。春天時，這裡更是著名的賞櫻勝地，數千株櫻花與天守閣相映成趣，美不勝收。' 
+            },
+            'skybuilding': { 
+                title: '梅田藍天大廈', 
+                tag: '絕美高空', 
+                desc: '梅田藍天大廈因其獨特的「雙塔連接」凱旋門式結構，被英國《泰晤士報》評選為「世界建築 TOP 20」，是大阪最具代表性的現代地標之一。這座建築的最大亮點是位於 173 公尺高空的「空中庭園展望台」。與一般隔著玻璃的室內觀景台不同，這裡是完全露天的圓形迴廊設計，讓您可以直接感受高空的微風，毫無玻璃遮擋地 360 度飽覽大阪全景。白天可以遠眺至淡路島與明石海峽大橋，傍晚則能欣賞壯麗的日落，夜晚更是欣賞「百萬夜景」的絕佳地點，腳下的地板還會發出如銀河般的螢光。前往展望台的透明手扶梯彷彿懸浮在空中，帶來穿越時空般的奇幻體驗。' 
+            },
+            'aoniyoshi': { 
+                title: '觀光特急 AONIYOSHI', 
+                tag: '奢華移動', 
+                desc: '觀光特急 AONIYOSHI 是近鐵電車推出，往返於大阪、奈良與京都之間的豪華觀光列車。其名稱「AONIYOSHI」源自於萬葉集中讚頌奈良古都的枕詞，車體設計也充滿了 1300 年前天平時代的古典美學。外觀採用高貴的紫色塗裝，內部則大量運用金色與木質元素，營造出如宮廷般的優雅氛圍。車廂內設有寬敞的沙發座與面向窗外的觀景座，讓旅客能舒適地欣賞沿途風景。第二節車廂設有販賣部，提供特製的甜點（如大佛布丁、奶油夾心餅）與奈良當地的美酒。搭乘 AONIYOSHI 不僅僅是移動，更是一場沈浸在歷史文化與奢華舒適中的頂級鐵道旅行體驗，是連結京阪奈三都最美的紐帶。' 
+            },
+            'kiyomizu': { 
+                title: '清水寺', 
+                tag: '世界遺產', 
+                desc: '清水寺是京都最古老、最著名的寺院之一，建於西元 778 年，也是世界文化遺產。其最為人稱道的「清水舞台」，由 139 根巨大的櫸木圓柱支撐，採用傳統的「懸造り」工法，整座高達 13 公尺的建築未使用一根釘子，結構精巧令人讚嘆。從舞台上眺望，可以將京都市景盡收眼底，四季皆有不同美景（春櫻、秋楓）。寺內的「音羽瀑布」流出的三道清泉，分別代表長壽、健康與智慧（學業），吸引無數遊客排隊飲用祈福。參拜結束後，漫步於寺前的二寧坂（二年坂）與三寧坂（三年坂），兩旁盡是保留傳統風貌的町家建築、陶器店與特色小吃，是感受京都古都風情與購買伴手禮的最佳路線。' 
+            },
+            'gion': { 
+                title: '祇園白川', 
+                tag: '京都風情', 
+                desc: '相較於花見小路的喧囂，祇園白川（白川南通）更顯得幽靜典雅，是京都最具韻味的散步道之一。清澈的白川潺潺流過，兩岸種滿了柳樹與櫻花樹，保存良好的傳統町家建築倒映在水面上，畫面如詩如畫，是許多攝影愛好者的天堂。這裡保留了江戶時代的風貌，偶爾還能幸運地看見藝妓或舞妓匆匆走過的身影。著名的「巽橋」與「辰巳大明神」是這裡的標誌性景點，也是許多影視作品的取景地。傍晚時分，當兩旁的料亭點亮溫暖的黃色燈光，石板路被映照得格外迷人，漫步於此，彷彿穿越回百年前的京都，感受那份獨有的靜謐、高級與優雅。' 
+            },
+            'pontocho': { 
+                title: '先斗町 (Pontocho)', 
+                tag: '美食窄巷', 
+                desc: '先斗町是位於鴨川與木屋町通之間的一條狹長石板小巷，也是京都著名的五花街之一。這條寬度僅容兩人並肩而行的窄巷，兩側林立著各式各樣的餐廳、居酒屋、茶屋與酒吧。從平價的串燒、大阪燒，到高級的懷石料理、壽喜燒應有盡有，是京都夜晚尋覓美食與小酌的最佳去處。保留著傳統町家建築的巷弄，掛滿了千鳥圖案的燈籠，充滿了濃厚的京都風情。夏季時（5月至9月），面對鴨川的店家會架設著名的「納涼床」（川床），讓客人在戶外平台上，伴著鴨川的流水聲與涼風享用美食，是京都夏日最迷人且獨特的風物詩。' 
+            },
+            'inari': { 
+                title: '伏見稻荷大社', 
+                tag: '千本鳥居', 
+                desc: '伏見稻荷大社是全日本三萬多座稻荷神社的總本宮，也是連續多年獲選「外國遊客最愛的日本景點」第一名。這裡供奉著保佑五穀豐收、生意興隆的稻荷大神，狐狸則是神的使者，因此隨處可見叼著鑰匙或卷軸的狐狸雕像。最著名的景觀莫過於後山上綿延不絕、由信徒捐贈的朱紅色「千本鳥居」。成千上萬座鳥居在光影交錯中形成一條通往山頂的紅色隧道，走在其中彷彿進入了神祕的異世界，視覺效果極為震撼。建議一大早前往，不僅能避開擁擠的人潮，還能拍到陽光穿透鳥居灑落的空靈美景。此外，這裡獨特的狐狸造型繪馬也是必看的特色之一。' 
+            },
+            'kitano': { 
+                title: '北野異人館街', 
+                tag: '異國建築', 
+                desc: '北野異人館街位於神戶的高地，是明治時期神戶開港後，外國人居住的區域。這裡保留了許多當時建造的西洋風格建築（異人館），散發著濃厚的異國情調，與日本傳統街道截然不同。沿著坡道散步，可以參觀多座對外開放的館邸。其中最著名的是屋頂上有風見雞的紅磚建築「風見雞之館」（舊托馬斯邸），以及外牆呈現美麗淡綠色的「萌黃之館」（舊美國領事亨特邸），它們都是國家指定的重要文化財。這一帶還有許多風格獨特的咖啡廳、精品店與美術館，如星巴克北野異人館店就是由舊洋館改建而成，充滿復古氛圍。在這裡，您可以放慢腳步，感受神戶獨有的洋派浪漫與歷史韻味。' 
+            },
+            'porttower': { 
+                title: '神戶港塔 & 美利堅公園', 
+                tag: '港灣夜景', 
+                desc: '神戶港塔是神戶港的地標象徵，以日本鼓（都築）為靈感設計的鮮紅色雙曲面結構，在藍天或夜色中都格外醒目優美。經過整修後重新開放，展望台可以 360 度俯瞰神戶港灣、六甲山與市區美景，部分樓層還有旋轉咖啡廳。塔下的美利堅公園（Meriken Park）是一個寬敞舒適的海濱公園，擁有著名的「BE KOBE」紀念碑，是遊客必拍的打卡熱點。夜晚時分，神戶港塔、造型如白色波浪的海洋博物館以及周邊飯店亮起璀璨燈光，倒映在海面上，構成了著名的神戶「千萬美元夜景」。晚餐後漫步於海濱步道，吹著海風欣賞浪漫夜景，是結束神戶一天的完美方式。' 
+            },
+            'animal': { 
+                title: '神戶動物王國', 
+                tag: '零距離接觸', 
+                desc: '神戶動物王國是一座全天候型的動植物園，以「花與動物共生」為主題。這裡最大的特色是打破了傳統動物園的藩籬，實現了超高自由度的「零距離」互動體驗。在園區內，水豚、袋鼠、環尾狐猴、象龜等溫馴動物就在遊客身邊自由走動，您可以親手觸摸甚至餵食牠們，體驗被小動物包圍的療癒感。園內溫室還種滿了繽紛的吊籃花卉，環境優美舒適。每日舉辦的「飛鳥秀」更是不可錯過的重頭戲，老鷹、貓頭鷹等猛禽在觀眾頭頂低空飛過，魄力十足。因位於室內且無障礙設施完善，無論晴雨或攜帶長輩幼童，都能輕鬆享受與動物親密接觸的快樂時光。' 
+            }
         };
 
         function showSpot(key) {
@@ -751,8 +825,8 @@
             if(backgrounds[id]) document.getElementById('app-background').style.backgroundImage = backgrounds[id];
             
             const titles = {
-                'day1': ['Day 1: 大阪抵達', '1月10日 (五)'], 'day2': ['Day 2: 大阪城 & 梅田', '1月11日 (六)'],
-                'day3': ['Day 3: 京都 AONIYOSHI', '1月12日 (日)'], 'day4': ['Day 4: 伏見稻荷 & 神戶', '1月13日 (一)'],
+                'day1': ['Day 1: 抵達 & 心齋橋、道頓堀', '1月10日 (五)'], 'day2': ['Day 2: 大阪城 & 梅田', '1月11日 (六)'],
+                'day3': ['Day 3: 京都 AONIYOSHI & 清水寺', '1月12日 (日)'], 'day4': ['Day 4: 伏見稻荷 & 神戶', '1月13日 (一)'],
                 'day5': ['Day 5: 動物王國 & 返程', '1月14日 (二)'], 'maps': ['車站立體圖索引', 'Station Maps']
             };
             document.getElementById('header-title').innerText = titles[id][0];
@@ -812,5 +886,3 @@
     </script>
 </body>
 </html>
-
-
